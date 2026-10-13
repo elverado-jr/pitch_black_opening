@@ -61,12 +61,12 @@
 ## 🌍🚀 𝐏𝐔𝐁𝐋𝐈𝐒𝐇 𝐖𝐈𝐓𝐇 𝐆𝐈𝐓𝐇𝐔𝐁 𝐏𝐀𝐆𝐄𝐒 🚀🌍
 
 1. 🐙 Open this repository on GitHub.
-2. ⚙️ Select **Settings**.
-3. 📄 Choose **Pages** in the sidebar.
-4. 🔧 Under **Build and deployment**, select **Deploy from a branch**.
-5. 🌿 Choose the `main` branch and the `/(root)` folder.
-6. 💾 Click **Save**.
-7. ⏳ Wait for deployment to finish, then visit the URL shown in the Pages settings.
+2. ⚙️ Select **Settings**, then **Pages**.
+3. 🔧 Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. 📤 Push a change to `main` (or manually run **Deploy to GitHub Pages** from the **Actions** tab).
+5. ⏳ Wait for the deployment workflow to finish, then visit the URL shown in the Pages settings or workflow deployment.
+
+The workflow publishes the repository root directly; no build step is required. Every push to `main` publishes the latest site.
 
 🔐 **Safety tip:** Never put passwords, access tokens, or other secrets in your repository.
 
