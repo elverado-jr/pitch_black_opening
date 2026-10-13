@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pitch Black Pack Pull</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif;color:#fff;background:radial-gradient(circle at 15% 10%,#ff4ecd,#6b38ff 30%,#07102f 75%)}.game{width:min(100%,480px);padding:20px;text-align:center;border:2px solid #65f5ff;border-radius:24px;background:linear-gradient(145deg,#17164f,#24105a,#071b4f);box-shadow:0 0 28px #65f5ff55,0 18px 50px #0009}.eyebrow{font-size:12px;letter-spacing:3px;color:#65f5ff;font-weight:900}.pack{width:132px;height:178px;margin:18px auto;display:grid;place-items:center;border:3px solid #ffe65c;border-radius:17px;background:radial-gradient(circle at 50% 28%,#ff55d9,#7d3cff 28%,#10104a 70%);font-size:22px;font-weight:1000;line-height:1.2;box-shadow:0 0 22px #ff4ecd88}.btn{border:0;border-radius:13px;padding:13px 20px;font-weight:900;font-size:16px;cursor:pointer;color:white;background:linear-gradient(90deg,#ff4ecd,#7d5cff,#28e7ff);box-shadow:0 6px 18px #0006}.btn:disabled{opacity:.6;cursor:wait}.result{min-height:260px;margin:14px 0;padding:14px;border-radius:16px;background:linear-gradient(145deg,#090c2d,#17104a);border:1px solid #ffffff33;display:grid;place-items:center}.placeholder{color:#c4c9ff}.card{width:min(240px,100%);padding:7px;border-radius:13px;background:linear-gradient(135deg,#ffe65c,#65f5ff,#ff4ecd);color:#15152b}.front{min-height:250px;border-radius:8px;padding:12px;background:linear-gradient(155deg,var(--a),var(--b) 58%,var(--c));display:flex;flex-direction:column;text-align:left}.name{display:flex;justify-content:space-between;gap:6px;background:#ffffffdf;border-radius:6px;padding:7px;font-weight:900;font-size:13px}.art{flex:1;display:grid;place-items:center;font-size:78px;text-shadow:0 4px 10px #0005}.move{text-align:center;background:#ffffffdf;border-radius:6px;padding:8px;font-size:11px;font-weight:900}.rarity{text-align:center;margin-top:7px;font-size:13px;font-weight:900}.stats{display:flex;justify-content:space-around;gap:8px;margin:16px 0 8px;color:#e0e5ff}.stats b{font-size:21px;color:#fff}.note{font-size:11px;color:#c4c9ff;line-height:1.5}h1{margin:5px 0;font-size:27px}p{line-height:1.5}.back{display:inline-block;margin-top:14px;color:#b8f8ff;font-size:12px;text-decoration:none}@media(max-width:400px){.game{padding:14px}.result{min-height:240px}}
+</style>
+</head>
+<body><main class="game">
+<div class="eyebrow">🌑 THE CARD HUNT 🌑</div><h1>Pitch Black Pack Pull</h1>
+<p>Open a pack and see what you find. Can you pull the special Mega Darkrai-inspired card?</p>
+<div class="pack">PITCH<br><span style="color:#65f5ff">BLACK</span></div>
+<div class="result" id="result" aria-live="polite"><div class="placeholder">Your card will appear here.<br>Ready to open a pack? ✨</div></div>
+<button class="btn" id="open" type="button">OPEN PACK</button>
+<div class="stats"><div>Packs opened<br><b id="packs">0</b></div><div>Special hits<br><b id="hits">0</b></div><div>Best streak<br><b id="best">0</b></div></div>
+<p class="note">Game simulation only — no real cards or money involved. Special-card odds: 1 in 100 per pack (1%). Card art and names are fan-made approximations.</p>
+<a class="back" href="./">Pitch Black Pack Pull</a>
+</main>
+<script>
+const $=id=>document.getElementById(id);let packs=0,hits=0,streak=0,best=0;
+const cards=[
+{name:'Goldeen',number:'013/084',rarity:'Common',emoji:'🐟',hp:70,colors:['#c6f7ff','#169ed8','#07558f'],move:'SPLASH • 10'},
+{name:'Sinistcha-inspired',number:'006/084',rarity:'Uncommon',emoji:'🍵',hp:90,colors:['#e1ffc9','#53b95b','#1a6542'],move:'TEA TIME • 20'},
+{name:'Armarouge-inspired',number:'012/084',rarity:'Rare',emoji:'🔥',hp:120,colors:['#fff0bd','#ff9145','#a52b38'],move:'FLARE • 40'},
+{name:'Mega Darkrai-inspired ex',number:'048/084',rarity:'Double Rare',emoji:'🌑',hp:280,colors:['#c6b5ff','#6036bd','#171044'],move:'NIGHT IMPACT • 120'},
+{name:'Goldeen',number:'087/084',rarity:'Illustration Rare',emoji:'🐠',hp:70,colors:['#ffe1f0','#ff87b9','#8d3c91'],move:'OCEAN GLOW • 30'}
+];
+function showCard(c,hit){const [a,b,d]=c.colors;const card=document.createElement('div');card.className='card';card.innerHTML='<div class="front" style="--a:'+a+';--b:'+b+';--c:'+d+'"><div class="name"><span></span><span>HP '+c.hp+'</span></div><div class="art"></div><div class="move"></div></div><div class="rarity"></div>';card.querySelector('.name span').textContent=c.name;card.querySelector('.art').textContent=c.emoji;card.querySelector('.move').textContent=c.move;card.querySelector('.rarity').textContent=c.rarity+' • '+c.number;const result=$('result');result.replaceChildren(card);const message=document.createElement('p');message.style.margin='8px 0 0';message.style.fontWeight='900';message.textContent=hit?'🎉 SPECIAL HIT! MEGA HYPER RARE!':'✨ You pulled a '+c.rarity+' card!';result.append(message)}
+$('open').addEventListener('click',()=>{const button=$('open');button.disabled=true;packs++;$('packs').textContent=packs;$('result').textContent='📦 Opening pack… revealing your card!';setTimeout(()=>{const hit=Math.floor(Math.random()*100)===0;let card;if(hit){hits++;streak++;best=Math.max(best,streak);card={name:'Mega Darkrai-inspired ex',number:'120/084',rarity:'MEGA HYPER RARE',emoji:'🌑✨',hp:330,colors:['#d5c7ff','#5532b5','#090b2d'],move:'DARK VOID • 300'}}else{streak=0;card=cards[Math.floor(Math.random()*cards.length)]}showCard(card,hit);$('hits').textContent=hits;$('best').textContent=best;button.disabled=false;button.textContent='OPEN ANOTHER PACK'},450)});
+</script></body></html>
