@@ -10,6 +10,7 @@
 
 - 🌈🏠 **Game library homepage:** [✨ Open the Homepage ✨](./index.html)
 - 🌑🃏 **Standalone pack-opening game:** [🎁 Open Pitch Black Pack Pull 🎁](./pitch-black-pack-pull.html)
+- 🖼️ **Complete card gallery:** [🌑 Browse all 120 Pitch Black card fronts 🌑](./pitch-black-card-gallery.html)
 
 🌐🔗 After GitHub Pages is enabled and the site has finished publishing, these addresses should work:
 
@@ -27,6 +28,11 @@
 - 💡 Example cards for future game ideas.
 - ➕ The **Add a game** button adds a temporary placeholder card in the current browser session. It does **not** upload a game file or save the card permanently.
 
+### 🖼️🌑 Complete card gallery — `pitch-black-card-gallery.html`
+- 🎴 Browse all **120 numbered Pitch Black cards** with their card-front images.
+- 🔎 Search by name or card number and filter by rarity or Pokémon vs. Trainer/Energy.
+- 🌐 Card images load from a public image service, so an internet connection is needed.
+
 ### 🌑🎴 Standalone game — `pitch-black-pack-pull.html`
 - 📦 Open packs and reveal a card!
 - 📊 Tracks packs opened, special hits, and best streak during the current session.
@@ -41,6 +47,7 @@
 | --- | --- |
 | `index.html` | 🏠 Main game-library homepage and embedded pack-opening game |
 | `pitch-black-pack-pull.html` | 🌑 Standalone Pitch Black Pack Pull game |
+| `pitch-black-card-gallery.html` | 🖼️ Searchable gallery of all 120 card fronts, numbers, and rarities |
 | `README.md` | 📘 Project information and setup instructions |
 
 ---
