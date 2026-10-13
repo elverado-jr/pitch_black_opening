@@ -1,6 +1,6 @@
-# 🎮✨🌑 𝐇𝐎𝐌𝐄𝐖𝐎𝐑𝐊 𝐒𝐈𝐌𝐔𝐋𝐀𝐓𝐄𝐑.𝐎𝐑𝐆 🌑✨🎮
+# 🎮✨🌑 𝐇𝐎𝐌𝐄𝐖𝐎𝐑𝐊_𝐒𝐈𝐌𝐔𝐋𝐀𝐓𝐎𝐑.𝐎𝐑𝐆 🌑✨🎮
 
-🎉🃏 Welcome to **Homework Simulater.org** — a colourful little browser-game hub, starting with **🌑✨ Pitch Black Pack Pull ✨🌑**!
+🎉🃏 Welcome to **Homework_Simulator.org** — a colourful little browser-game hub, starting with **🌑✨ Pitch Black Pack Pull ✨🌑**!
 
 > ⚠️🎴 **IMPORTANT:** This is a fan-made game simulation. It does **NOT** give you real Pokémon cards, items, or money. Card visuals and details are illustrative approximations and are not official Pokémon card scans.
 
@@ -21,7 +21,7 @@
 ## ✨🔥 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 🔥✨
 
 ### 🏠🌈 Homepage — `index.html`
-- 🎨 A colourful **Homework Simulater.org** game-library design.
+- 🎨 A colourful **Homework_Simulator.org** game-library design.
 - 🔎 Search to filter the game cards.
 - 🎮 Play Pitch Black Pack Pull in a pop-up.
 - 💡 Example cards for future game ideas.
